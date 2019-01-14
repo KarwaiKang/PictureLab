@@ -68,6 +68,12 @@ public class PictureTester
     coolBeans.negate();
     coolBeans.explore();
   }
+
+  public static void testFixUnderwater() {
+    Picture coolBeans = new Picture("water.jpg").scale(0.5, 0.5);
+    coolBeans.fixUnderwater();
+    coolBeans.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -82,7 +88,7 @@ public class PictureTester
     //testKeepOnlyGreen();
     testNegate();
     testGrayscale();
-    //testFixUnderwater();
+    testFixUnderwater();
     testMirrorVertical();
     testMirrorTemple();
     //testMirrorArms();
