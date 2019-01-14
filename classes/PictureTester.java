@@ -51,6 +51,12 @@ public class PictureTester
     swan.explore();
   }
 
+  public static void testGrayscale() {
+    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    coolBeans.grayscale();
+    coolBeans.explore();
+  }
+
   public static void testKeepOnlyBlue() {
     Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
     coolBeans.keepOnlyBlue();
@@ -70,13 +76,12 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testKeepOnlyBlue();
     // testZeroBlue();
-    //testKeepOnlyBlue();
+    testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     testNegate();
-    //testGrayscale();
+    testGrayscale();
     //testFixUnderwater();
     testMirrorVertical();
     testMirrorTemple();
