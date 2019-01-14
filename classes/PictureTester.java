@@ -54,6 +54,7 @@ public class PictureTester
   public static void testKeepOnlyBlue() {
     Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
     coolBeans.keepOnlyBlue();
+    coolBeans.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -63,7 +64,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    testKeepOnlyBlue();
+    // testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
