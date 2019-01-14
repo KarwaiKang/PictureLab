@@ -50,6 +50,11 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
+
+  public static void testKeepOnlyBlue() {
+    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    coolBeans.keepOnlyBlue();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
