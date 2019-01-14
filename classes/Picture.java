@@ -135,9 +135,17 @@ public class Picture extends SimplePicture
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels) {
       for (Pixel pixelObj : rowArray) {
-        pixelObj.setRed((pixelObj.getRed() * 10));
-        pixelObj.setGreen((pixelObj.getGreen() * 10));
-        pixelObj.setBlue((pixelObj.getBlue() * 10));
+        if (pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue() < 382) {
+          pixelObj.setRed((pixelObj.getRed() / 2));
+          pixelObj.setGreen((pixelObj.getGreen() / 2));
+          pixelObj.setBlue((pixelObj.getBlue() / 2));
+        }
+        else {
+          pixelObj.setRed(pixelObj.getRed() + 255 / 2);
+          pixelObj.setGreen(pixelObj.getGreen() + 255 / 2);
+          pixelObj.setBlue(pixelObj.getBlue() + 255 / 2);
+        }
+
       }
     }
   }
