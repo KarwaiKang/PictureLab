@@ -122,4 +122,11 @@ public class IntArrayWorker
     return max;
   }
 
+  public int getColTotal(int col) {
+      int total = 0;
+      for (int[] row : matrix) {
+          total += row[col];
+      }
+      return total;
+  }
 }
