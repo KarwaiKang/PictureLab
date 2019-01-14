@@ -56,6 +56,12 @@ public class PictureTester
     coolBeans.keepOnlyBlue();
     coolBeans.explore();
   }
+
+  public static void testNegate() {
+    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    coolBeans.negate();
+    coolBeans.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -69,7 +75,7 @@ public class PictureTester
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
+    testNegate();
     //testGrayscale();
     //testFixUnderwater();
     testMirrorVertical();
