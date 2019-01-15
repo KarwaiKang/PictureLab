@@ -100,6 +100,12 @@ public class PictureTester
     coolBeans.fixUnderwater();
     coolBeans.explore();
   }
+
+  public static void testMirrorSnowman() {
+      Picture snowman = new Picture("snowman.jpg");
+      snowman.mirrorSnowman(161, 100, 300, 225);
+      snowman.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -119,11 +125,12 @@ public class PictureTester
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
     //testMirrorHorizontalBotToTop();
-    testMirrorDiagonal();
+    //testMirrorDiagonal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
+      testMirrorSnowman();
     //testCollage();
     //testCopy();
     //testEdgeDetection();

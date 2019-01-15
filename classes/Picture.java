@@ -209,6 +209,16 @@ public class Picture extends SimplePicture
       }
     }
   }
+
+  public void mirrorSnowman(int rowLower, int columnLower, int columnUpper, int mirrorPointHorizontal) {
+    Pixel[][] pixels = this.getPixels2D();
+    // The mirror point would take the role of the row upper limit
+    for (int i = rowLower; i < mirrorPointHorizontal; i ++) {
+      for (int j = columnLower; j < columnUpper; j ++) {
+        pixels[mirrorPointHorizontal - (i + 1) + rowLower][j].setColor(pixels[i][j].getColor());
+      }
+    }
+  }
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
@@ -230,8 +240,10 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+        count ++;
       }
     }
+    System.out.println("The number of loops is " + count);
   }
   
   /** copy from the passed fromPic to the
