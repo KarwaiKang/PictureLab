@@ -45,6 +45,12 @@ public class PictureTester
     coolBeans.explore();
   }
 
+  public static void testMirrorDiagonal() {
+    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    coolBeans.mirrorDiagonal();
+    coolBeans.explore();
+  }
+
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -112,7 +118,8 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
-    testMirrorHorizontalBotToTop();
+    //testMirrorHorizontalBotToTop();
+    testMirrorDiagonal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
