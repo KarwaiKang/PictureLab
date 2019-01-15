@@ -71,6 +71,7 @@ public class PictureTester
 
   public static void testFixUnderwater() {
     Picture coolBeans = new Picture("water.jpg").scale(0.5, 0.5);
+    coolBeans.explore();
     coolBeans.fixUnderwater();
     coolBeans.explore();
   }
@@ -83,20 +84,20 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     // testZeroBlue();
-    //testKeepOnlyBlue();
+//    testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    testFixUnderwater();
-    //testMirrorVertical();
-    //testMirrorTemple();
+//    testNegate();
+    testGrayscale();
+//    testFixUnderwater();
+//    testMirrorVertical();
+//    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+//    testCollage();
     //testCopy();
-    //testEdgeDetection();
+//    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
