@@ -32,7 +32,13 @@ public class PictureTester
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
   }
-  
+
+  public static void testMirrorHorizontal() {
+      Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+      coolBeans.mirrorHorizontal();
+      coolBeans.explore();
+  }
+
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -91,21 +97,22 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     // testZeroBlue();
-    testKeepOnlyBlue();
+    //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
-    testGrayscale();
-    testFixUnderwater();
-    testMirrorVertical();
-      testMirrorVerticalRightToLeft();
-    testMirrorTemple();
+    //testNegate();
+    //testGrayscale();
+    //testFixUnderwater();
+    //testMirrorVertical();
+    //testMirrorVerticalRightToLeft();
+    testMirrorHorizontal();
+    //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
