@@ -34,19 +34,19 @@ public class PictureTester
   }
 
   public static void testMirrorHorizontal() {
-      Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+      Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
       coolBeans.mirrorHorizontal();
       coolBeans.explore();
   }
 
   public static void testMirrorHorizontalBotToTop() {
-    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
     coolBeans.mirrorHorizontalBotToTop();
     coolBeans.explore();
   }
 
   public static void testMirrorDiagonal() {
-    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
     coolBeans.mirrorDiagonal();
     coolBeans.explore();
   }
@@ -77,19 +77,19 @@ public class PictureTester
   }
 
   public static void testGrayscale() {
-    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
     coolBeans.grayscale();
     coolBeans.explore();
   }
 
   public static void testKeepOnlyBlue() {
-    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
     coolBeans.keepOnlyBlue();
     coolBeans.explore();
   }
 
   public static void testNegate() {
-    Picture coolBeans = new Picture("coolbeans.jpg").scale(0.5, 0.5);
+    Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
     coolBeans.negate();
     coolBeans.explore();
   }
@@ -101,9 +101,9 @@ public class PictureTester
     coolBeans.explore();
   }
 
-  public static void testMirrorSnowman() {
+  public static void testMirrorArms() {
       Picture snowman = new Picture("snowman.jpg");
-      snowman.mirrorSnowman(161, 100, 300, 225);
+      snowman.mirrorArms(161, 100, 300, 225);
       snowman.explore();
   }
 
@@ -111,6 +111,19 @@ public class PictureTester
     Picture seagull = new Picture("seagull.jpg");
     seagull.mirrorGull();
     seagull.explore();
+  }
+
+  public static void testCopy() {
+    Picture canvas = new Picture("640x480.jpg");
+    Picture coolBeans = new Picture("coolBeans.jpg");
+    canvas.copy(coolBeans, 294, 511, 685, 873,150,220);
+    canvas.explore();
+  }
+
+  public static void testMyCollage() {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -128,17 +141,17 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-    //testMirrorVerticalRightToLeft();
-    //testMirrorHorizontal();
-    //testMirrorHorizontalBotToTop();
+//    testMirrorVerticalRightToLeft();
+//    testMirrorHorizontal();
+//    testMirrorHorizontalBotToTop();
+//    testMirrorDiagonal();
+//    testMirrorTemple();
+//    testMirrorArms();
+//    testMirrorGull();
     //testMirrorDiagonal();
-    //testMirrorTemple();
-    //testMirrorArms();
-    testMirrorGull();
-    //testMirrorDiagonal();
-    //testMirrorSnowman();
-    //testCollage();
-    //testCopy();
+//    testCollage();
+      testMyCollage();
+//    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
