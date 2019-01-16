@@ -361,19 +361,16 @@ public class Picture extends SimplePicture
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
-  public void edgeDetection(int edgeDist)
-  {
-    Pixel leftPixel = null;
-    Pixel rightPixel = null;
+  public void edgeDetection(int edgeDist) {
+    Pixel leftPixel, rightPixel, bottomPixel;
+    Picture copy = new Picture(this);
     Pixel[][] pixels = this.getPixels2D();
-    Color rightColor = null;
-    for (int row = 0; row < pixels.length; row++)
-    {
-      for (int col = 0; 
-           col < pixels[0].length-1; col++)
-      {
+    Pixel[][] pixelsCopy = copy.getPixels2D();
+    Color rightColor, bottomColor;
+    for (int row = 0; row < pixels.length; row++) {
+      for (int col = 0; col < pixels[0].length - 1; col++) {
         leftPixel = pixels[row][col];
-        rightPixel = pixels[row][col+1];
+        rightPixel = pixels[row][col + 1];
         rightColor = rightPixel.getColor();
         if (leftPixel.colorDistance(rightColor) > 
             edgeDist)
@@ -382,9 +379,27 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+    for (int row = 0; row < pixelsCopy.length - 1; row++) {
+      for (int col = 0; col < pixelsCopy[0].length; col++) {
+        leftPixel = pixelsCopy[row][col];
+        bottomPixel = pixelsCopy[row + 1][col];
+        bottomColor = bottomPixel.getColor();
+        if (leftPixel.colorDistance(bottomColor) >
+                edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+    for (int row = 0; row < pixels.length; row++) {
+      for (int col = 0; col < pixels[0].length; col++) {
+        if (pixelsCopy[row][col].getColor().equals(Color.BLACK)) {
+          pixels[row][col].setColor(Color.BLACK);
+        }
+      }
+    }
   }
-  
-  
+
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
