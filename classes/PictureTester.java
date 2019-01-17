@@ -88,7 +88,7 @@ public class PictureTester {
         coolBeans.edgeDetection(10);
         coolBeans.explore();
         coolerBeans.edgeDetection2(0.25);
-        coolBeans.explore();
+        coolerBeans.explore();
     }
 
     public static void testGrayscale() {
