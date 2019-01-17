@@ -81,6 +81,13 @@ public class PictureTester {
         swan.explore();
     }
 
+    public static void testEdgeDetection2() {
+        Picture coolBeans = new Picture("coolbeans.jpg");
+        coolBeans.explore();
+        coolBeans.edgeDetection2(0.25);
+        coolBeans.explore();
+    }
+
     public static void testGrayscale() {
         Picture coolBeans = new Picture("coolBeans.jpg").scale(0.5, 0.5);
         coolBeans.grayscale();
@@ -148,18 +155,18 @@ public class PictureTester {
 //    testFixUnderwater();
 //    testMirrorVertical();
 //    testMirrorVerticalRightToLeft();
-//    testMirrorHorizontal();
-//    testMirrorHorizontalBotToTop();
-//    testMirrorDiagonal();
-//    testMirrorTemple();
-//    testMirrorArms();
-//    testMirrorGull();
+//  testMirrorHorizontal();
+//  testMirrorHorizontalBotToTop();
+//  testMirrorDiagonal();
+//  testMirrorTemple();
+//  testMirrorArms();
+//  testMirrorGull();
 //    testMirrorDiagonal();
 //    testCollage();
-//    testMyCollage();
-//    testCopy();
-//    testEdgeDetection();
-//    testEdgeDetection2();
+//  testMyCollage();
+//  testCopy();
+    testEdgeDetection();
+    testEdgeDetection2();
         //testChromakey();
         //testEncodeAndDecode();
         //testGetCountRedOverValue(250);

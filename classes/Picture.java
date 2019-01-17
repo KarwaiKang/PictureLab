@@ -397,6 +397,40 @@ public class Picture extends SimplePicture {
         }
     }
 
+    public void edgeDetection2(double sensitivity) {
+        Picture copy = new Picture(this);
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel[][] pixelCopy = copy.getPixels2D();
+        Pixel currentPixel;
+        int top, bottom, left, right, color;
+
+        for (int i = 1; i < pixels.length - 1; i ++) {
+            for (int j = 1; j < pixels[i].length - 1; j ++) {
+                currentPixel = pixelCopy[i][j];
+                left = pixelCopy[i][j - 1].getBlue() + pixelCopy[i][j - 1].getRed() + pixelCopy[i][j - 1].getGreen();
+                bottom = pixelCopy[i + 1][j].getBlue() + pixelCopy[i + 1][j].getRed() + pixelCopy[i + 1][j].getGreen();
+                right = pixelCopy[i][j + 1].getBlue() + pixelCopy[i][j + 1].getRed() + pixelCopy[i][j + 1].getGreen();
+                top = pixelCopy[i - 1][j].getBlue() + pixelCopy[i - 1][j].getRed() + pixelCopy[i - 1][j].getGreen();
+
+                int[] colorDifferences = {(left + top) / 2,(right + top) / 2, (left + bottom) / 2,(left + bottom) / 2};
+
+                color = currentPixel.getBlue() + currentPixel.getRed() + currentPixel.getGreen();
+                int sens = 0;
+                for (int k = 0; k < 4; k ++) {
+                    if (Math.abs(color - colorDifferences[k]) > 255 * sensitivity) {
+                        sens ++;
+                    }
+                }
+                if (sens >= 2) {
+                    pixels[i][j].setColor(Color.BLACK);
+                }
+                else {
+                    pixels[i][j].setColor(Color.WHITE);
+                }
+            }
+        }
+    }
+
     /* Main method for testing - each class in Java can have a main
      * method
      */
