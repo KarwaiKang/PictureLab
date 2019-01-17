@@ -83,8 +83,11 @@ public class PictureTester {
 
     public static void testEdgeDetection2() {
         Picture coolBeans = new Picture("coolbeans.jpg");
+        Picture coolerBeans = new Picture("coolbeans.jpg");
         coolBeans.explore();
-        coolBeans.edgeDetection2(0.25);
+        coolBeans.edgeDetection(10);
+        coolBeans.explore();
+        coolerBeans.edgeDetection2(0.25);
         coolBeans.explore();
     }
 
